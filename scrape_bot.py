@@ -9,12 +9,12 @@ reload(sys)
 
 
 
-reddit = praw.Reddit(client_id='f8yDsjCFiBrLQA', \
-client_secret='49aj9U54-bt9fxCPpI-eCpLYDUA', \
-user_agent='scrape_bot', \
-password='redditBOT$2019!')
+reddit = praw.Reddit(client_id='CLIENT_ID', \
+client_secret='CLIENT_SECRET', \
+user_agent='USER_AGENT', \
+password='PASSWORD')
 
-subreddit = reddit.subreddit('malefashion')
+subreddit = reddit.subreddit('NAME_OF_SUBREDDIT')
 top_subreddit = subreddit.top(limit=100)
 
 for submission in subreddit.top(limit=1):
@@ -46,5 +46,5 @@ _timestamp = topics_data["created"].apply(get_date)
 
 topics_data = topics_data.assign(timestamp = _timestamp)
 
-topics_data.to_csv('scrape_bot_data.csv', index=False)
+topics_data.to_csv('NAME_FOR_FILE.csv', index=False)
 
